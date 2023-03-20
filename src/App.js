@@ -1,6 +1,5 @@
 import './App.css';
 import axios from 'axios';
-import bootstrap from 'react/bootstrap';
 import Form from 'react/bootstrap';
 
 
