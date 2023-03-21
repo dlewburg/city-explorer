@@ -10,7 +10,7 @@ export default class CityMap extends Component {
       <Card>
         <Card.Body>
         <Card.Title>{this.props.cityName}</Card.Title>
-        <Card.Text>Latitude: {this.props.cityLat}, Longitude: {this.props.cityLong}</Card.Text>
+        <Card.Text>{this.props.cityLat}, {this.props.cityLong}</Card.Text>
         <Card.Img variant="top" src={this.props.mapUrl} alt={this.props.cityName}/>
         </Card.Body>
       </Card>
