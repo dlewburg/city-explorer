@@ -3,9 +3,6 @@ import './App.css';
 import axios from 'axios';
 import CitySearch from './Components/CitySearch';
 import CityMap from './Components/CityMap';
-// import CityError from './Components/CityError';
-
-
 
 class App extends React.Component {
   constructor(props) {
@@ -47,7 +44,6 @@ class App extends React.Component {
           error: true,
           errorMessage: error.message
         })
-        console.log(error);
     }
   }
 
@@ -57,10 +53,10 @@ class App extends React.Component {
     return (
 
       <>
-        <h1>City</h1>
+        <h1>City Locator</h1>
         <CitySearch submitCity={this.submitCity} getCityData={this.getCityData} error={this.state.error} errorMessage={this.state.errorMessage} />
         <CityMap cityLat={this.state.cityLat} cityLong={this.state.cityLong} mapUrl={this.state.mapUrl} cityName={this.state.cityName} />
-        {/* <CityError error={this.state.error} errorMessage={this.state.errorMessage} cityLat={this.state.cityLat} cityLong={this.state.cityLong} mapUrl={this.state.mapUrl} cityName={this.state.cityName}/> */}
+      
       </>
     )
   }

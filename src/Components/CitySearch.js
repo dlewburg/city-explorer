@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { Form, Button, Alert} from 'react-bootstrap';
+import '../css/CitySearch.css'
 
 export default class CitySearch extends Component {
   render() {
     return (
-      <Form onSubmit={this.props.getCityData}>
+      <Form onSubmit={this.props.getCityData} class="form-body">
           <Form.Group onChange={this.props.submitCity}>
-            <Form.Label> Enter City: </Form.Label>
+            <Form.Label> Search City Name: </Form.Label>
             <Form.Control></Form.Control>
           </Form.Group>
           {this.props.error && (
@@ -19,7 +20,7 @@ export default class CitySearch extends Component {
              </>
             )
             }
-          <Button type="submit">Explore!</Button>
+          <Button variant="secondary" bsPrefix="super-btn" type="submit">Explore!</Button>
         </Form>
     )
   }
