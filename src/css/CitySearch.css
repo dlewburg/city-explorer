@@ -1,0 +1,18 @@
+form{
+  background-color: blanchedalmond
+}
+
+.form-label {
+  font-size: 130% ;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form-control{
+  background-color: rgb(128, 136, 136);
+  margin: 1%
+}
+
+.super-btn{
+  align-self: right;
+  margin: 3%;
+}

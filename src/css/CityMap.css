@@ -1,0 +1,17 @@
+.card-img-top{
+  height: 100%;
+  width: 100%;
+}
+
+.card-body{
+  background-color: black;
+  color: blanchedalmond; 
+}
+
+.card-title{
+  color: blanchedalmond
+}
+
+.card-text{
+  color: blanchedalmond
+}

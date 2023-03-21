@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# City Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Author**: Dasha Burgos
+**Version**: 1.0.0
+<!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Uses a GeoLocation API to generate a map based off user typed, chosen location.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Create an app with `react-create-app`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Create Repo on GitHub from React app
 
-### `npm test`
+An API Key
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Deploy site on Netlify
 
-### `npm run build`
+## Architecture
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ The application is designed in React components were they are plug and play. At this stage all components share a parent. React.js is used for the Components and styling. LocationIQ is used for API Key. CSS is also used for some styling. HTML placeholders are used for JavaScript DOM.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Change Log
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+03-20-2023 16:30 - Application baseline is set and API key is retrieved and placed on deployed site as well as sites for API key use defined.
 
-### `npm run eject`
+03-20-2023 17:30 - Application form accepts a city and shows the called data for that particular city.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+03-20-2023 21:30 - Application Map component successfully renders map image of user selected city based of gps coordinates. Application successfully renders error message for anything typed that is not a city
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+03-20-2023 21:30 - Application has styling for every component with React bootstrap.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Credit and Collaborations
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Assisted by:
 
-## Learn More
+    * Audrey P. (Instructor)
+    * Justin H.(TA)
+    * Tony R. (TA)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+References:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[React Bootstrap](https://react-bootstrap.github.io/components/alerts/)
 
-### Code Splitting
+[Google Fonts](https://fonts.google.com/specimen/Permanent+Marker)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[LocationIQ](https://locationiq.com/docs)
 
-### Analyzing the Bundle Size
+## Time Estimates
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
 
-### Making a Progressive Web App
+### Feature #1: Set Up React and API Keys
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Estimate of time needed to complete: 1 hour 30 minutes
 
-### Advanced Configuration
+Start time: 1600
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Finish time: 1630
 
-### Deployment
+Actual time needed to complete: 30 minutes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Feature #2: Locations
 
-### `npm run build` fails to minify
+Estimate of time needed to complete: 2 hours
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Start time: 1645
+
+Finish time: 1730
+
+Actual time needed to complete: 45 minutes
+
+### Feature #3: Map
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 0000
+
+Finish time: 0200
+
+Actual time needed to complete: 2 hours
+
+### Feature #4: Errors
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 2000
+
+Finish time: 2130
+
+Actual time needed to complete: 1 hour 30 minutes
