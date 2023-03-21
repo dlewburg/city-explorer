@@ -5,7 +5,7 @@ import '../css/CitySearch.css'
 export default class CitySearch extends Component {
   render() {
     return (
-      <Form onSubmit={this.props.getCityData} class="form-body">
+      <Form onSubmit={this.props.getCityData} >
           <Form.Group onChange={this.props.submitCity}>
             <Form.Label> Search City Name: </Form.Label>
             <Form.Control></Form.Control>
