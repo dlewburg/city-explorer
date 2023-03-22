@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import CitySearch from './Components/CitySearch';
 import CityMap from './Components/CityMap';
+import Weather from './Components/Weather';
 
 class App extends React.Component {
   constructor(props) {
@@ -59,6 +60,7 @@ class App extends React.Component {
     try {
       
       let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?cityName=${this.state.city}&lat=${lat}&lon=${lon}`;
+      console.log(weatherUrl);
 
       let axiosWeatherData = await axios.get(weatherUrl);
       
@@ -80,6 +82,7 @@ class App extends React.Component {
         <h1>City Locator</h1>
         <CitySearch submitCity={this.submitCity} getCityData={this.getCityData} error={this.state.error} errorMessage={this.state.errorMessage} />
         <CityMap cityLat={this.state.cityLat} cityLong={this.state.cityLong} mapUrl={this.state.mapUrl} cityName={this.state.cityName} />
+        <Weather weatherData={this.state.weatherData}/>
       
       </>
     )
