@@ -4,6 +4,7 @@ import axios from 'axios';
 import CitySearch from './Components/CitySearch';
 import CityMap from './Components/CityMap';
 import Weather from './Components/Weather';
+import Movies from './Components/Movies';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,10 @@ class App extends React.Component {
       weatherData: [],
       city: '',
       max_temp: '',
-      min_temp: ''
+      min_temp: '',
+      movieData: [],
+      movieError: false,
+      movieErrorMessage: '',
     }
   }
 
@@ -49,6 +53,8 @@ class App extends React.Component {
 
       this.handleGetWeather (lat, lon);
 
+      this.handleGetMovies();
+
     } catch(error) {
         this.setState({
           error: true,
@@ -66,7 +72,7 @@ class App extends React.Component {
 
       let axiosWeatherData = await axios.get(weatherUrl);
 
-      console.log("HERE:", axiosWeatherData);
+      // console.log("HERE:", axiosWeatherData);
       
       this.setState({
         weatherData: axiosWeatherData.data
@@ -74,6 +80,28 @@ class App extends React.Component {
 
     } catch (error) {
       console.log(error.message);
+    }
+  }
+
+  handleGetMovies = async () => {
+
+    try{
+
+      let movieUrl = `${process.env.REACT_APP_SERVER}/movies?cityName=${this.state.city}`;
+      let axiosMovieData = await axios.get(movieUrl);
+      console.log('LOOK HERE:', axiosMovieData.data);
+      this.setState({
+        movieData: axiosMovieData.data,
+        movieError: false,
+        movieErrorMessage: ''
+
+      })
+
+    } catch (error) {
+      this.setState({
+        movieError: true,
+        movieErrorMessage: `A Movie Error Occurred:`
+      })
     }
   }
 
@@ -87,6 +115,7 @@ class App extends React.Component {
         <CitySearch submitCity={this.submitCity} getCityData={this.getCityData} error={this.state.error} errorMessage={this.state.errorMessage} />
         <CityMap cityLat={this.state.cityLat} cityLong={this.state.cityLong} mapUrl={this.state.mapUrl} cityName={this.state.cityName} />
         <Weather weatherData={this.state.weatherData}/>
+        <Movies movieData={this.state.movieData} cityName={this.state.cityName}/>
       
       </>
     )
