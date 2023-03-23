@@ -8,8 +8,12 @@ export default class Weather extends Component {
       {this.props.weatherData.map((day, idx) => {
       return(
         <>
-        <p>{day.date}</p>
-        <p>{day.description}</p>
+        <p>Today is {day.date}</p>
+        
+        <p>Hi of: {day.max_temp}</p>
+        <p>Low of: {day.min_temp}</p>
+
+        <p>Expected Weather: {day.description}</p>
         </>
       )
       })}
@@ -17,4 +21,5 @@ export default class Weather extends Component {
       </>
     )
   }
+
 }
