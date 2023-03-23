@@ -15,7 +15,9 @@ class App extends React.Component {
       error: false,
       errorMessage: '',
       weatherData: [],
-      city: ''
+      city: '',
+      max_temp: '',
+      min_temp: ''
     }
   }
 
@@ -30,7 +32,7 @@ class App extends React.Component {
 
     try {
 
-      const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`
+      const url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`
 
       let axiosData = await axios.get(url);
 
@@ -63,6 +65,8 @@ class App extends React.Component {
       console.log(weatherUrl);
 
       let axiosWeatherData = await axios.get(weatherUrl);
+
+      console.log("HERE:", axiosWeatherData);
       
       this.setState({
         weatherData: axiosWeatherData.data
