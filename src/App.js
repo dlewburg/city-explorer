@@ -57,7 +57,7 @@ class App extends React.Component {
 
     } catch(error) {
         this.setState({
-          error: true,
+          movieError: true,
           errorMessage: error.message
         })
     }
@@ -68,18 +68,14 @@ class App extends React.Component {
     try {
       
       let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?cityName=${this.state.city}&lat=${lat}&lon=${lon}`;
-      console.log(weatherUrl);
 
       let axiosWeatherData = await axios.get(weatherUrl);
-
-      // console.log("HERE:", axiosWeatherData);
       
       this.setState({
         weatherData: axiosWeatherData.data
       })
 
     } catch (error) {
-      console.log(error.message);
     }
   }
 
@@ -89,25 +85,23 @@ class App extends React.Component {
 
       let movieUrl = `${process.env.REACT_APP_SERVER}/movies?cityName=${this.state.city}`;
       let axiosMovieData = await axios.get(movieUrl);
-      console.log('LOOK HERE:', axiosMovieData.data);
+      
       this.setState({
         movieData: axiosMovieData.data,
-        movieError: false,
-        movieErrorMessage: ''
+        error: false,
+        movieErrorMessage: 'NO RELATED MOVIES'
 
       })
 
     } catch (error) {
       this.setState({
-        movieError: true,
-        movieErrorMessage: `A Movie Error Occurred:`
+        error: true,
+        movieErrorMessage: error.message
       })
     }
   }
 
   render() {
-    // console.log(this.state);
-    // console.log('CityName:', this.state.cityName);
     return (
 
       <>
@@ -115,7 +109,7 @@ class App extends React.Component {
         <CitySearch submitCity={this.submitCity} getCityData={this.getCityData} error={this.state.error} errorMessage={this.state.errorMessage} />
         <CityMap cityLat={this.state.cityLat} cityLong={this.state.cityLong} mapUrl={this.state.mapUrl} cityName={this.state.cityName} />
         <Weather weatherData={this.state.weatherData}/>
-        <Movies movieData={this.state.movieData} cityName={this.state.cityName}/>
+        <Movies movieData={this.state.movieData} cityName={this.state.cityName} errorMessage={this.state.movieErrorMessage}/>
       
       </>
     )
