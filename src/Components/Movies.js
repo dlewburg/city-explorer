@@ -7,6 +7,8 @@ export default class Movies extends Component {
   render() {
     if (this.props.movieData.length === 0){
       return (
+
+
         <Alert variant="danger">
           <p>{this.props.errorMessage}</p>
         </Alert>
