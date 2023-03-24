@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
+import { Dropdown } from 'react-bootstrap'
+import DropdownItem from 'react-bootstrap/esm/DropdownItem'
 
 export default class WeatherDay extends Component {
   render() {
     return (
-      <div> 
-        <p>Day: {this.props.weatherDay.date}</p>
-        
-        <p>Hi of: {this.props.weatherDay.max_temp}</p>
-        <p>Low of: {this.props.weatherDay.min_temp}</p>
+      <Dropdown>
+        <Dropdown.Toggle>{this.props.weatherDay.date}</Dropdown.Toggle>
 
-        <p>Expected Weather: {this.props.weatherDay.description}</p>
-      </div>
+        <Dropdown.Menu>
+          <DropdownItem>Expected Forecast: {this.props.weatherDay.description}</DropdownItem>
+          <DropdownItem>Hi of: {this.props.weatherDay.max_temp} Degrees</DropdownItem>
+          <DropdownItem>Low of: {this.props.weatherDay.min_temp} Degrees</DropdownItem>
+        </Dropdown.Menu>  
+      </Dropdown>
     )
   }
 }
