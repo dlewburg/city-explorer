@@ -12,7 +12,7 @@ export default class Movie extends Component {
             <Accordion.Header>{this.props.movie.title}</Accordion.Header>
             <AccordionBody>
               <p>Overview: {this.props.movie.overview}</p>
-              <img scr={this.props.movie.image_url} alt={this.props.movie.title} movie cover/>
+              <img src={this.props.movie.image_url} alt={this.props.movie.title} movie cover/>
               <p><span>Avg Votes: {this.props.movie.average_votes}</span> <span>Total Votes: {this.props.movie.total_votes}</span></p>
               <p><span>Released: {this.props.movie.released_on}</span> <span>Popularity: {this.props.movie.popularity}</span></p>
             </AccordionBody>
